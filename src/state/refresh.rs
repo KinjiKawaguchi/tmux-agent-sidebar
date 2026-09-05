@@ -159,10 +159,7 @@ impl AppState {
         } else {
             self.apply_session_snapshot(focused, sessions);
         }
-        if self.sessions.dirty {
-            self.refresh_session_names();
-            self.sessions.dirty = false;
-        }
+        self.refresh_session_names();
         self.refresh_activity_data();
         window_active
     }
